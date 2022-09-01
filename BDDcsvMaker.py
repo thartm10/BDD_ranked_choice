@@ -3,14 +3,15 @@ import random
 
 doctors, patients = int(sys.argv[1]), int(sys.argv[2])
 outputfile = open("patient_preference_list.csv",'w')
+doctorPatientMap = {}
 
-doctorList = list(range(doctors))
-
-for i in doctorList:
+for i in range(patients):
+    doctorPatientMap[i] = random.sample(list(range(doctors)),doctors)
     outputfile.write(","+str(i))
 outputfile.write("\n")
 
-for j in range(patients):
+for j in range(doctors):
     outputfile.write(str(j))
-    [outputfile.write(","+str(k)) for k in random.sample(doctorList,doctors)]
+    for k in range(patients):
+        outputfile.write(","+str(doctorPatientMap[k].index(j)))
     outputfile.write("\n")
