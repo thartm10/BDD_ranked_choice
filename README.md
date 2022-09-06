@@ -1,4 +1,4 @@
-# BDD_ranked_choice
+# BDD_ranked_choice by Todd Hartman and Ishan Kalburge
 A greedy approach to matching patients to their preferred doctor using ranked preference lists provided by the patients.
 
 ## Approach
